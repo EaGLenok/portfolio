@@ -1,0 +1,161 @@
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center; /* Изменено с flex-end на center для вертикального центрирования */
+  margin-top: 50px;
+  margin-bottom: 50px;
+  flex-wrap: wrap; /* Добавлено для переноса карточек на следующую строку при нехватке места */
+}
+  
+.card {
+  position: relative;
+  width: 300px; /* Изменено с 400px для более компактного вида */
+  height: 400px; /* Изменено с 500px для более компактного вида */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Сделан фон менее прозрачным для лучшей читаемости */
+  border-radius: 20px;
+  text-align: center;
+  backface-visibility: hidden;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Уменьшено размытие тени для более чёткого вида */
+  margin: 10px; /* Добавлено для создания отступов между карточками */
+  overflow: hidden; /* Добавлено для скрытия выходящих за пределы элементов (например, тени) */
+}
+  
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(43, 16, 85, 0.5), rgba(43, 16, 85, 0.3));
+    border-radius: 19.5px;
+    z-index: 1;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+  }
+  
+  .card:hover::before {
+    opacity: 1;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px) scale(1.03); /* Добавлен эффект увеличения при наведении */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Усиление тени при наведении */
+  }
+  
+  .card {
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    margin: 20px;
+  }
+  
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+  }
+  
+  .card:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  
+  .card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px; /* Увеличено для соответствия внешнему контейнеру */
+  }
+  
+  .card-front {
+    background: linear-gradient(to right bottom, #ffffff, #f0f0f0);
+    color: #333;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Мягкая тень для трёхмерного эффекта */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  }
+  
+  .card-back {
+    background-color: #333;
+    transform: rotateY(180deg);
+  }
+  
+  .card-back img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .card-content p {
+    color: #555;
+    font-size: 1em;
+    height: 100px; /* Фиксированная высота для текста */
+    overflow: hidden; /* Скрыть переполнение текста */
+    position: relative;
+  }
+  
+  .card-content h3, .card-content p {
+    color: #333; /* Сохранение тёмного цвета для читаемости */
+  padding: 0 10px;
+  }
+  
+  .card-content h3 {
+    margin-bottom: 15px; /* Увеличение отступа для визуального разделения */
+    font-size: 1.4em; /* Небольшое уменьшение размера для лучшей адаптивности */
+  }
+  
+  .card-content p {
+    font-size: 0.9em;
+    opacity: 0.85; /* Слегка затемненный текст */
+  }
+  
+  .card-content p::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px; /* Уменьшение высоты для более тонкого эффекта */
+    background: linear-gradient(to bottom, transparent, white);
+  }
+  
+  .card-front {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавление тени для эффекта глубины */
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .card-front:hover {
+    transform: scale(1.05); /* Увеличение масштаба при наведении */
+  }
+  
+  .card-front h3 {
+    font-size: 1.6em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2b1055; /* Акцентный цвет */
+  }
+  
+  .card-front p {
+    font-size: 1em;
+    text-align: center;
+    opacity: 0.85; /* Улучшенная читаемость */
+  }
+  
+
+  
