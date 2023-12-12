@@ -31,7 +31,30 @@
     </p>
    
   </section>
+  <div class="buttons-container">
+    <button class="btn-show-image" onclick="openModal('modal4')">See fully 1!</button>
+    <button class="btn-show-image" onclick="openModal('modal5')">See fully 2!</button>
+    <button class="btn-show-image" onclick="openModal('modal6')">See fully 3!</button>
+  </div>
   
+  <div class="modal modal-fullsize" id="modal4">
+    <div class="modal-fullsize-content">
+      <span class="close" onclick="closeModal('modal4')">&times;</span>
+      <img src="images/afisha3.png" alt="Image 4">
+    </div>
+  </div>
+  <div class="modal modal-fullsize" id="modal5">
+    <div class="modal-fullsize-content">
+      <span class="close" onclick="closeModal('modal5')">&times;</span>
+      <img src="images/afisha2.png" alt="Image 5">
+    </div>
+  </div>
+  <div class="modal modal-fullsize" id="modal6">
+    <div class="modal-fullsize-content">
+      <span class="close" onclick="closeModal('modal6')">&times;</span>
+      <img src="images/afisha.png" alt="Image 6">
+    </div>
+  </div>
   <section class="card-container">
     <div class="card" id="card1" onclick="openModal('modal1')">
       <div class="card-inner">
@@ -54,7 +77,8 @@
         <span class="close" onclick="closeModal('modal1')">&times;</span>
         <img class="img-modal1" src="images/burns-forest.jpg" alt="">
         <h3>Countering Forest Fires</h3>
-        <p>To stop forest fires, we need to clean the forest of dead trees and plants often. Making clear areas without trees can help stop fires from spreading. Teaching people not to leave fires or throw away cigarettes in the forest is important. Also, having a system to find fires early and a team ready to put out fires fast is necessary.</p>
+        <p>I am going to talk about forest fires. A forest fire is a wildfire in a natural area. To stop forest fires we need to clean the forest more often and remove the dead trees and plants. Look how the situation is around your area. Never park your car in tall grass because the underside of the car gets hot and you can cause a fire that way.To address this issue, we will gather signatures and send them to the government. Afterwards, I need to ensure that our firefighters are always ready to prevent forest fires.. With sufficient funds, I will employ engineers to develop a system for detecting forest fires..
+</p>
       </div>
     </div>
     
@@ -63,7 +87,7 @@
         <div class="card-front">
           <div class="card-content">
             <h3>Global warming</h3>
-            <p>I am going to talk about forest fires. A forest fire is a wildfire in a natural area. To stop forest fires we need to clean the forest more often and remove the dead trees and plants. Look how the situation is around your area. Never park your car in tall grass because the underside of the car gets hot and you can cause a fire that way.
+            <p>Now i am going to talk about global warming. Global warming is the long-term heating of Earth’s surface due to human activities. It’s primarily fossil fuel burning. How are we going to solve global warming? We are going to save energy at home, you can walk, bike or take public transport also we can reduce, re-use, repair and recycle. To solve all that i am going to hang stickers everywhere in town, so people know how they can help.
 
             </p>
           </div>
@@ -81,9 +105,8 @@
         <span class="close" onclick="closeModal('modal2')">&times;</span>
         <img class="img-modal1" src="images/global-warming.jpg" alt="">
         <h3>Global warming</h3>
-        <p>Now i am going to talk about global warming. Global warming is the long-term heating of Earth’s surface due to human activities. It’s a primarily fossil fuel burning. How are we going to solve global warming? We are going to save energy at home, you can walk, bike or take public transport also we can reduce, re-use, repair and recycle.
+        <p>The last topic is about water scarcity. Water scarcity is defined as a water deficiency or a lack of safe water supplies. How are we going to solve that? Take shorter showers ,Turn off the water while brushing your teeth ,Turn off the water while shaving. I am going to sell water bottles with our logo on. With the money we are going to donate it.
         </p>
-    
       </div>
     </div>
     <div class="card" id="card3" onclick="openModal('modal3')">
@@ -153,13 +176,25 @@ window.addEventListener("scroll", function () {
 
 
 
+// Функция для открытия модального окна
 function openModal(modalId) {
-  document.getElementById(modalId).style.display = "block";
+  var modal = document.getElementById(modalId);
+  modal.style.display = "block";
 }
 
+// Функция для закрытия модального окна
 function closeModal(modalId) {
-  document.getElementById(modalId).style.display = "none";
+  var modal = document.getElementById(modalId);
+  modal.style.display = "none";
 }
+
+// Добавляем обработчики для закрытия модального окна по клику вне его содержимого
+window.onclick = function(event) {
+  if (event.target.className === "modal") {
+    event.target.style.display = "none";
+  }
+}
+
   </script>
 </body>
 </html>

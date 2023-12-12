@@ -288,17 +288,18 @@ footer .social a:hover {
 
 
 .close {
-  color: #333;
+  color: #ff6b6b;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: -10px;
+  right: 3px;
   font-size: 30px;
   font-weight: bold;
   transition: color 0.2s; /* Плавный переход цвета */
 }
 
+
 .close:hover, .close:focus {
-  color: #ff6b6b; /* Яркий цвет при наведении */
+  color: red; /* Яркий цвет при наведении */
   cursor: pointer;
 }
 
@@ -308,3 +309,32 @@ footer .social a:hover {
   margin-right: 20px; /* Отступ справа от изображения */
 }
 
+.modal-fullsize {
+  display: none;
+  position: fixed;
+  z-index: 1111111;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Центрировать модальное окно */
+  width: 900px; /* Указанная ширина */
+  height: 1300px; /* Указанная высота */
+  max-width: 100%; /* Максимальная ширина - 100% экрана */
+  max-height: 100%; /* Максимальная высота - 100% экрана */
+  overflow: auto; /* Если содержимое больше окна, добавить прокрутку */
+  background-color: rgba(0,0,0,0.4); /* Фон с прозрачностью */
+}
+
+.modal-fullsize-content {
+  position: relative;
+  width: 99%;
+  height: 99%;
+}
+
+.modal-fullsize img {
+  margin-top: 10px;
+  margin-left: 10px;
+  max-width: 99%; 
+  width: 900px; /* Указанная ширина */
+  height: 1300px; /* Указанная высота */
+  max-height: 99%;
+}

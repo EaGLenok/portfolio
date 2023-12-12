@@ -158,4 +158,52 @@
   }
   
 
-  
+/* Стили для контейнера кнопок */
+.buttons-container {
+  position: relative; 
+  display: flex;
+  justify-content: space-between; /* Распределение пространства между кнопками */
+  align-items: center; /* Центрирование кнопок по вертикали */
+}
+
+/* Общие стили для кнопок */
+.btn-show-image {
+    position: absolute; /* Абсолютное позиционирование для каждой кнопки */
+    top: -50px; /* Поднимаем кнопку вверх от ее нормального положения */
+  flex-grow: 0; /* Убедитесь, что кнопки не растягиваются */
+  width: auto; /* Автоматическая ширина в зависимости от содержимого */
+  margin: 20px 0; /* Отступ сверху и снизу для каждой кнопки */
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Стили для первой кнопки */
+.btn-show-image:first-child {
+  top: -15px;
+  left: 355px;
+}
+
+/* Стили для второй (центральной) кнопки */
+.btn-show-image:nth-child(2) {
+  top: -15px;
+  left: 50%; /* Позиционируем по центру, но нужно скорректировать, чтобы центр кнопки совпадал с центром контейнера */
+  transform: translateX(-50%); /* Сдвигаем кнопку на 50% ее ширины назад, чтобы центрировать */
+}
+
+/* Стили для последней кнопки */
+.btn-show-image:last-child {
+  top: -15px;
+  right: 360px; /* Прижимаем к правому краю контейнера */
+}
+
+/* Стили для наведения */
+.btn-show-image:hover {
+  background-color: #45a049;
+}
